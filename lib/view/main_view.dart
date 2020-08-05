@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
 import 'package:otakoyi_test_app/widgets/appbar/notification_icon.dart';
+import 'package:otakoyi_test_app/widgets/search/main_search_textfield.dart';
 
 class MainView extends StatelessWidget {
   const MainView({Key key}) : super(key: key);
@@ -23,7 +24,11 @@ class MainView extends StatelessWidget {
         ),
         preferredSize: Size.fromHeight(60),
       ),
-      body: Column(),
+      body: Column(
+        children: <Widget>[
+          MainSearchTextField(),
+        ],
+      ),
     );
   }
 }
