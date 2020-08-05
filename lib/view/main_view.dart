@@ -26,37 +26,54 @@ class MainView extends StatelessWidget {
         ),
         preferredSize: Size.fromHeight(60),
       ),
-      body: Column(
-        children: <Widget>[
-          MainSearchTextField(),
-          MainTitle(
-            titleText: "Filters",
-          ),
-          DropDownFilter(
-            items: [
-              "All areas",
-              "Elsewhere",
-            ],
-            hasHintText: false,
-          ),
-          DropDownFilter(
-            items: [
-              "Accident",
-              "Failure",
-              "Attack",
-            ],
-            hasHintText: true,
-            hintText: "Type of case",
-          ),
-          DropDownFilter(
-            items: [
-              "California",
-              "Washington",
-            ],
-            hasHintText: true,
-            hintText: "State",
-          ),
-        ],
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        color: HexColor("#E8ECEE").withOpacity(0.38),
+        child: Column(
+          children: <Widget>[
+            MainSearchTextField(),
+            MainTitle(
+              titleText: "Filters",
+            ),
+            DropDownFilter(
+              items: [
+                "All areas",
+                "Elsewhere",
+              ],
+              hasHintText: false,
+              overheadText: "Area of practice",
+            ),
+            DropDownFilter(
+              items: [
+                "Accident",
+                "Failure",
+                "Attack",
+              ],
+              hasHintText: true,
+              hintText: "Type of case",
+            ),
+            DropDownFilter(
+              items: [
+                "California",
+                "Washington",
+              ],
+              hasHintText: true,
+              hintText: "State",
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
+              child: Divider(
+                thickness: 1,
+                color: HexColor("#B6BFC2").withOpacity(0.6),
+              ),
+            ),
+            MainTitle(
+              titleText: "Choose the rate",
+            ),
+          ],
+        ),
       ),
     );
   }

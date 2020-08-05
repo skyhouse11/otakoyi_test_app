@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
 
 class MainSearchTextField extends StatelessWidget {
@@ -10,6 +11,7 @@ class MainSearchTextField extends StatelessWidget {
       height: 54,
       alignment: Alignment.center,
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(4),
         border: Border.all(
           color: HexColor("#6200EE").withOpacity(0.24),
@@ -29,7 +31,7 @@ class MainSearchTextField extends StatelessWidget {
       ),
       child: TextField(
         keyboardType: TextInputType.text,
-        style: TextStyle(
+        style: GoogleFonts.workSans(
           fontSize: 16,
           fontWeight: FontWeight.w500,
         ),
@@ -40,7 +42,7 @@ class MainSearchTextField extends StatelessWidget {
           enabledBorder: InputBorder.none,
           errorBorder: InputBorder.none,
           disabledBorder: InputBorder.none,
-          hintStyle: TextStyle(
+          hintStyle: GoogleFonts.workSans(
             fontSize: 16,
             color: HexColor("#0D2834").withOpacity(0.38),
             fontWeight: FontWeight.w500,
