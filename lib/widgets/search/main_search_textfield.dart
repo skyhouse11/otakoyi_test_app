@@ -12,14 +12,16 @@ class MainSearchTextField extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
         border: Border.all(
-          color: HexColor("#6200EE"),
+          color: HexColor("#6200EE").withOpacity(0.24),
           width: 1,
           style: BorderStyle.solid,
         ),
       ),
-      margin: EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 24,
+      margin: EdgeInsets.only(
+        left: 16,
+        right: 16,
+        top: 24,
+        bottom: 8,
       ),
       padding: EdgeInsets.only(
         left: 16,
