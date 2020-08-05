@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
 import 'package:otakoyi_test_app/widgets/appbar/notification_icon.dart';
+import 'package:otakoyi_test_app/widgets/general/big_button.dart';
 import 'package:otakoyi_test_app/widgets/general/main_title.dart';
 import 'package:otakoyi_test_app/widgets/search/dropdown_filter.dart';
 import 'package:otakoyi_test_app/widgets/search/main_search_textfield.dart';
@@ -103,6 +105,14 @@ class MainView extends StatelessWidget {
                 fromNotifier: fromNotifier,
                 toNotifier: toNotifier,
               ),
+              BigButton(
+                text: "Apply Filters",
+                textStyle: GoogleFonts.workSans(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+                buttonColor: "#0D2834",
+              )
             ],
           ),
         ),
