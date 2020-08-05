@@ -98,10 +98,9 @@ class _DropDownFilterState extends State<DropDownFilter> {
         ),
         widget.overheadText != null
             ? Container(
-                height: 14,
-                alignment: Alignment.bottomCenter,
+                height: 22,
                 width: 95,
-                color: HexColor("#E8ECEE").withOpacity(0.38),
+                color: Colors.white,
                 margin: EdgeInsets.only(
                   left: 32,
                 ),
@@ -109,6 +108,7 @@ class _DropDownFilterState extends State<DropDownFilter> {
                   widget.overheadText,
                   style: GoogleFonts.workSans(
                     fontSize: 12,
+                    backgroundColor: HexColor("#E8ECEE").withOpacity(0.38),
                     fontWeight: FontWeight.w500,
                     color: HexColor("#0D2834").withOpacity(0.6),
                   ),
