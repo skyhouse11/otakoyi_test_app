@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
+import 'package:otakoyi_test_app/widgets/case/bottom_parameter.dart';
 import 'package:otakoyi_test_app/widgets/case/middle_tag.dart';
 import 'package:otakoyi_test_app/widgets/case/top_tag_container.dart';
 import 'package:otakoyi_test_app/widgets/general/main_title.dart';
@@ -15,6 +16,25 @@ class CaseColumn extends StatelessWidget {
     this.amountOfBidders,
     this.amountOfInterviewers,
   });
+
+  final List<Map<String, dynamic>> dataForCase = [
+    {
+      "title": "Min referral fee",
+      "data": "30%",
+    },
+    {
+      "title": "Area of practice",
+      "data": "Personal injury",
+    },
+    {
+      "title": "Posted",
+      "data": "Sep 19, 2019",
+    },
+    {
+      "title": "Represent",
+      "data": "PLaintiff",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +133,26 @@ class CaseColumn extends StatelessWidget {
                   text: "Sep 19, 2019",
                 ),
               ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(16),
+            child: GridView.builder(
+              itemCount: 4,
+              padding: EdgeInsets.all(0.0),
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height / 5),
+              ),
+              itemBuilder: (context, index) {
+                return BottomParameter(
+                  data: dataForCase[index]["data"],
+                  title: dataForCase[index]["title"],
+                );
+              },
             ),
           ),
         ],
