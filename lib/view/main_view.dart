@@ -17,6 +17,57 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1,
+        showUnselectedLabels: true,
+        unselectedItemColor: HexColor("#0D2834").withOpacity(0.38),
+        selectedItemColor: HexColor("#0D2834"),
+        iconSize: 30,
+        elevation: 100,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text(
+              "Search",
+              style: GoogleFonts.workSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline),
+            title: Text(
+              "Refer",
+              style: GoogleFonts.workSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail_outline),
+            title: Text(
+              "Messages",
+              style: GoogleFonts.workSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            title: Text(
+              "Profile",
+              style: GoogleFonts.workSans(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
       appBar: PreferredSize(
         child: AppBar(
           backgroundColor: HexColor("#0D2834"),
@@ -118,6 +169,11 @@ class MainView extends StatelessWidget {
                 caseTitle: "John Smith | Smith Law Firm",
                 amountOfBidders: 12,
                 amountOfInterviewers: 5,
+              ),
+              CaseColumn(
+                caseTitle: "John Smith | Smith Law Firm",
+                amountOfBidders: 0,
+                amountOfInterviewers: 0,
               ),
             ],
           ),

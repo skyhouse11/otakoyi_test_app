@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
-import 'package:otakoyi_test_app/widgets/case/bottom_parameter.dart';
+import 'package:otakoyi_test_app/widgets/case/bottom_param_list.dart';
 import 'package:otakoyi_test_app/widgets/case/middle_tag.dart';
 import 'package:otakoyi_test_app/widgets/case/top_tag_container.dart';
+import 'package:otakoyi_test_app/widgets/general/big_button.dart';
 import 'package:otakoyi_test_app/widgets/general/main_title.dart';
 
 class CaseColumn extends StatelessWidget {
@@ -16,25 +17,6 @@ class CaseColumn extends StatelessWidget {
     this.amountOfBidders,
     this.amountOfInterviewers,
   });
-
-  final List<Map<String, dynamic>> dataForCase = [
-    {
-      "title": "Min referral fee",
-      "data": "30%",
-    },
-    {
-      "title": "Area of practice",
-      "data": "Personal injury",
-    },
-    {
-      "title": "Posted",
-      "data": "Sep 19, 2019",
-    },
-    {
-      "title": "Represent",
-      "data": "PLaintiff",
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -135,24 +117,91 @@ class CaseColumn extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(16),
-            child: GridView.builder(
-              itemCount: 4,
-              padding: EdgeInsets.all(0.0),
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 5),
+          BottomParamList(),
+          amountOfBidders != 0
+              ? BigButton(
+                  buttonColor: "#C8A574",
+                  toExpand: true,
+                  margin: EdgeInsets.only(
+                    bottom: 12,
+                    left: 16,
+                    right: 16,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "More about the Bidders",
+                        style: GoogleFonts.workSans(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        Icons.info_outline,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
+                )
+              : Container(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              BigButton(
+                width: MediaQuery.of(context).size.width * 0.45,
+                buttonColor: "#FFFFFF",
+                text: "Edit",
+                textStyle: GoogleFonts.workSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: HexColor("#0D2834"),
+                  height: 1.5,
+                ),
+                borderSide: BorderSide(
+                  color: HexColor("#B6BFC2"),
+                  width: 2,
+                ),
+                margin: EdgeInsets.only(
+                  bottom: 12,
+                  left: 16,
+                  right: 4,
+                ),
               ),
-              itemBuilder: (context, index) {
-                return BottomParameter(
-                  data: dataForCase[index]["data"],
-                  title: dataForCase[index]["title"],
-                );
-              },
+              BigButton(
+                width: MediaQuery.of(context).size.width * 0.45,
+                buttonColor: "#FFFFFF",
+                text: "Delete",
+                textStyle: GoogleFonts.workSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: HexColor("#EB5757"),
+                  height: 1.5,
+                ),
+                borderSide: BorderSide(
+                  color: HexColor("#EB5757"),
+                  width: 2,
+                ),
+                margin: EdgeInsets.only(
+                  bottom: 12,
+                  left: 4,
+                  right: 16,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            color: Colors.white,
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 4,
+            ),
+            child: Divider(
+              color: HexColor("#B6BFC2").withOpacity(0.6),
             ),
           ),
         ],
