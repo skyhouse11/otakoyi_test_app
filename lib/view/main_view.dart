@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otakoyi_test_app/util/hex_color.dart';
 import 'package:otakoyi_test_app/widgets/appbar/notification_icon.dart';
+import 'package:otakoyi_test_app/widgets/case/case_column.dart';
 import 'package:otakoyi_test_app/widgets/general/big_button.dart';
 import 'package:otakoyi_test_app/widgets/general/main_title.dart';
 import 'package:otakoyi_test_app/widgets/search/dropdown_filter.dart';
@@ -112,7 +113,12 @@ class MainView extends StatelessWidget {
                   fontSize: 16,
                 ),
                 buttonColor: "#0D2834",
-              )
+              ),
+              CaseColumn(
+                caseTitle: "John Smith | Smith Law Firm",
+                amountOfBidders: 12,
+                amountOfInterviewers: 5,
+              ),
             ],
           ),
         ),

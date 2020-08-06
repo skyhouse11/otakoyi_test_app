@@ -22,7 +22,7 @@ class MainTitle extends StatelessWidget {
           fontSize: 24,
           height: 1.15,
           fontWeight: FontWeight.w600,
-          letterSpacing: -0.5,
+          letterSpacing: -0.75,
         ),
       ),
     );
